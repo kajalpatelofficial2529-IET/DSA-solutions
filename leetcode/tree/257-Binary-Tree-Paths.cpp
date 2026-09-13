@@ -10,8 +10,9 @@
  * };
  */
 class Solution {
-   void preorder(TreeNode* root, string s, vector<string>& result) {
+   void preorder(TreeNode* root, string&s, vector<string>& result) {
      if(root==NULL)return;
+     int len = s.length();
        s+=to_string(root->val);
        if (root->left == NULL && root->right == NULL) {
             result.push_back(s);}
@@ -21,11 +22,13 @@ class Solution {
         preorder(root->left,s,result);
         preorder(root->right,s,result);
       }
+      s.erase(len);
     }
 public:
     vector<string> binaryTreePaths(TreeNode* root) {
        vector<string> result;
-       preorder(root, "", result); 
+       string s = "";
+       preorder(root, s, result); 
         
         return result;
     }
