@@ -11,16 +11,28 @@
  */
 class Solution {
 public:
-    vector<int> rviewre(TreeNode* root,int level,vector<int>&ans){
-        if(!root)return ans;
-        if(level==ans.size())ans.push_back(root->val);
-        rviewre(root->right, level+1,ans);
-        rviewre(root->left, level+1,ans);
-        return ans;
-    }
     vector<int> rightSideView(TreeNode* root) {
-        vector<int>ans;
-        int level=0;
-      return  rviewre(root, level,ans);
+        if(root == NULL){
+            return {};
+        }
+       vector<int> result;
+       queue<TreeNode*> que; 
+       que.push(root);
+     
+        while(!que.empty()){
+            int n = que.size();
+            TreeNode* node = NULL;
+           
+            while(n--){
+            node = que.front();
+            que.pop();
+            if(node->left!= NULL)
+            que.push(node->left);
+            if(node->right != NULL)
+            que.push(node ->right);
+            }
+            result.push_back(node->val);
+        }
+        return result;
     }
 };
