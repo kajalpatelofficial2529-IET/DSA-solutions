@@ -22,16 +22,17 @@ public:
         while(!que.empty()){
             int n = que.size();
             TreeNode* node = NULL;
-           
+            result.push_back(que.front()->val);
             while(n--){
             node = que.front();
             que.pop();
+             if(node->right != NULL)
+            que.push(node ->right);
             if(node->left!= NULL)
             que.push(node->left);
-            if(node->right != NULL)
-            que.push(node ->right);
+    
             }
-            result.push_back(node->val);
+           
         }
         return result;
     }
