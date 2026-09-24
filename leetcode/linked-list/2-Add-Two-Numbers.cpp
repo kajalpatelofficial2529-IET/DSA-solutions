@@ -14,7 +14,7 @@ public:
         ListNode* l3=new ListNode();
         ListNode* head = l3;
         int carry=0;
-        while(l1!=NULL || l2!=NULL || carry!=0){
+        while(l1 || l2 || carry){
            int val1 = (l1 == NULL) ? 0 : l1->val;
             int val2 = (l2 == NULL) ? 0 : l2->val;
             int x=val1+val2+carry;
@@ -30,7 +30,7 @@ public:
            if(l1 != NULL) l1 = l1->next;
             if(l2 != NULL) l2 = l2->next;
             // ager loop phir se chale tabhi create kro new node else useless
-           if(l1 != NULL || l2 != NULL || carry != 0) {
+           if(l1  || l2  || carry ) {
                 l3->next = new ListNode();
                 l3 = l3->next;
             }
