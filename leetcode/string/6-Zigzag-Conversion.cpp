@@ -1,11 +1,11 @@
 class Solution {
 public:
     string convert(string s, int k) {
-        if (k<=1 || k>=s.length()) {
+        if (k<=1||k>=s.length()) {
             return s;
         }
         vector<string>r(k);
-        int dir=1; //up 
+        int dir=1;//up side
         int cr=0;
         for(int i=0;i<s.length();i++){
              r[cr]+=s[i];
