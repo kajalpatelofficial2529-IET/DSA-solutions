@@ -7,6 +7,7 @@ public:
         int ns=s.size();
         int count=0;
         int gl=0;
+
         int sl=0;
 
         while(gl<ng && sl<ns){
