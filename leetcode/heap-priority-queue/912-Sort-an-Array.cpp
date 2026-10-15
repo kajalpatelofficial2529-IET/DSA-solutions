@@ -33,9 +33,6 @@ public:
         }
 
     }
-
-    
-
     void mergesort(vector<int>&nums ,int l,int r){
        if(l>=r)return;
         int mid=l+(r-l)/2;
@@ -44,11 +41,8 @@ public:
         merge(nums,l,mid,r);
 
     }
-
     vector<int> sortArray(vector<int>& nums) {
-        
-         mergesort(nums, 0, nums.size() - 1);
-
+         mergesort(nums,0,nums.size()-1);
         return nums;
     }
 };
