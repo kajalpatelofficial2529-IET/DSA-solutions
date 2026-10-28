@@ -8,12 +8,18 @@ public:
             count1++;
         }
        }
+
+       
        int l=0;
        int ncnt=0;
        for(int i=0;i<count1;i++){
        if(nums[i]==1)
         ncnt++;
+
        }
+
+
+
        if(count1<=1){
         return 0;
        }
