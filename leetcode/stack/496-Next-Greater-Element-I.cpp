@@ -10,7 +10,7 @@ public:
         while(s.size()>0 && s.top()<=nums2[i]){
             s.pop();
         }
-          if(s.size()==0){
+          if(s.empty()){
                 mp[nums2[i]]=-1;
             }
             else
@@ -23,8 +23,6 @@ public:
       for(int i=0;i<m;i++){
         ans.push_back(mp[nums1[i]]);
       }
-
-
      return ans;
     }
 };
